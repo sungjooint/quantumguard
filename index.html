@@ -1,0 +1,416 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀀텀가드 - 첨단 커스터디 솔루션</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1a202c;
+            background-color: #f7fafc;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #172a45 0%, #0f172a 100%);
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        .security-icon {
+            color: #3182ce;
+        }
+        .accent-border {
+            border-left: 4px solid #3182ce;
+        }
+        .blur-bg {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: rgba(49, 130, 206, 0.2);
+            filter: blur(80px);
+            z-index: -1;
+        }
+        .technology-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: rgba(49, 130, 206, 0.1);
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #2b6cb0;
+        }
+        .quantum-badge {
+            background: linear-gradient(135deg, #4c1d95 0%, #7e22ce 100%);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+        }
+        .section {
+            padding: 6rem 2rem;
+        }
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            background-position: center;
+            background-size: cover;
+            position: relative;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(23, 42, 69, 0.95) 0%, rgba(15, 23, 42, 0.9) 100%);
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .animation-pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-xl font-bold text-blue-900">퀀텀가드</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#solutions" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">솔루션</a>
+                    <a href="#technology" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">기술</a>
+                    <a href="#security" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">보안</a>
+                    <button class="bg-blue-600 hover:bg-blue-700 transition-colors text-white px-5 py-2 rounded-md font-medium">문의하기</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero gradient-bg text-white relative">
+        <div class="blur-bg" style="top: 20%; left: 15%;"></div>
+        <div class="blur-bg" style="bottom: 15%; right: 10%;"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="md:w-2/3">
+                <div class="quantum-badge mb-4">
+                    <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"></path>
+                    </svg>
+                    양자내성 보안
+                </div>
+                <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-6">
+                    차세대<br />커스터디 솔루션
+                </h1>
+                <p class="text-xl mb-8 text-blue-100">
+                    첨단 멀티시그 기술과 양자내성 암호화를 통해 디지털 자산을 보호하여 
+                    탁월한 수준의 보안을 제공합니다.
+                </p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <button class="bg-blue-600 hover:bg-blue-700 transition-colors text-white px-8 py-3 rounded-lg font-medium">
+                        시작하기
+                    </button>
+                    <button class="bg-transparent border-2 border-white hover:bg-white hover:text-blue-900 transition-colors text-white px-8 py-3 rounded-lg font-medium">
+                        자세히 알아보기
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Overview -->
+    <section id="solutions" class="section bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">완벽한 커스터디 솔루션</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    당사의 첨단 인프라는 검증된 보안 프로토콜과 차세대 양자내성 암호화를 결합하여 
+                    디지털 자산을 안전하게 보호합니다.
+                </p>
+            </div>
+
+            <div class="feature-grid">
+                <div class="card rounded-2xl p-8 hover:shadow-lg transition-shadow">
+                    <div class="technology-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">자체 공급 솔루션 제공</h3>
+                    <p class="text-gray-600">
+                        자체 보유한 기술력으로 유연한 고객의 요구에
+                        대처하여 앞선 서비스를 제공합니다.
+                    </p>
+                </div>
+
+                <div class="card rounded-2xl p-8 hover:shadow-lg transition-shadow">
+                    <div class="technology-icon">
+                        <i class="fas fa-key"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">멀티-시그 기술(Multi-Sig)</h3>
+                    <p class="text-gray-600">
+                        다중 계약자에 의한 분산형 권한 키 매니지먼트로 
+						소중한 디지털 자산을 보호합니다. 커스터디 디지털 수탁 기술의 주요 내욥입니다.
+                    </p>
+                </div>
+
+                <div class="card rounded-2xl p-8 hover:shadow-lg transition-shadow">
+                    <div class="technology-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">다중연산 기술(MPC)</h3>
+                    <p class="text-gray-600">
+                        MPC는 다자간 계약자들이 자신의 데이터를 공개하지 않고 
+						공동으로 보안 연산을 수행할 수 있는 암호화 기술입니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Section -->
+    <section id="technology" class="section gradient-bg text-white relative">
+        <div class="blur-bg" style="top: 30%; right: 20%;"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">첨단 보안 기술</h2>
+                <p class="text-xl text-blue-100 max-w-3xl mx-auto">
+                    당사 플랫폼은 최첨단 암호화 기술을 통합하여 현재와 양자 컴퓨팅 시대에도 
+                    디지털 자산에 최대한의 보호를 보장합니다.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="card bg-white text-gray-900 rounded-xl p-8 hover:shadow-xl transition-shadow">
+                    <div class="flex items-center mb-6">
+                        <div class="technology-icon mr-4">
+                            <i class="fas fa-fingerprint"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold">멀티시그 기술</h3>
+                    </div>
+                    <div class="accent-border pl-4">
+                        <p class="mb-4 text-gray-700">
+                            당사의 멀티시그 기술은 트랜잭션 실행 전 여러 독립적인 승인을 요구하여 
+                            무단 접근의 위험을 크게 줄입니다. 디지털 자산에 대한 다양한 권한 분산에 중요합니다.
+                        </p>
+                        <ul class="space-y-2 text-gray-700 mb-4">
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-blue-600 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                </svg>
+                                설정 가능한 승인 임계값(M-of-N 서명)
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-blue-600 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                </svg>
+                                하드웨어 보안 모듈 통합
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-blue-600 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                </svg>
+                                물리적으로 분산된 키 관리 
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card bg-white text-gray-900 rounded-xl p-8 hover:shadow-xl transition-shadow">
+                    <div class="flex items-center mb-6">
+                        <div class="technology-icon mr-4">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold">다자간 계산(MPC)</h3>
+                    </div>
+                    <div class="accent-border pl-4">
+                        <p class="mb-4 text-gray-700">
+                            당사의 MPC 기술은 여러 당사자가 입력을 비공개로 유지하면서 함께 함수를 계산할 수 있게 하여 
+                            안전하고 비공개적인 트랜잭션 서명을 가능하게 합니다.
+                        </p>
+                        <ul class="space-y-2 text-gray-700 mb-4">
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-blue-600 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                </svg>
+                                키 노출의 단일 지점 없음
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-blue-600 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                </svg>
+                                분산된 키 생성 및 서명
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-blue-600 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                </svg>
+                                프라이빗 정책 시행
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ML-KEM Section -->
+    <section id="security" class="section bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-12">
+                    <div class="quantum-badge mb-4" style="background: linear-gradient(135deg, #4c1d95 0%, #7e22ce 100%);">
+                        <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"></path>
+                        </svg>
+                        NIST 2024 표준
+                    </div>
+                    <h2 class="text-3xl font-bold mb-6">양자내성 암호화</h2>
+                    <p class="text-gray-700 mb-6">
+                        당사 플랫폼은 2024년 미국 국립표준기술연구소(NIST)가 채택한 포스트 양자 키 암호화 표준인 
+                        ML-KEM(Module Lattice-based Key Encapsulation Mechanism)을 사용합니다.
+                    </p>
+                    <p class="text-gray-700 mb-6">
+                        이 최첨단 암호화 기술은 기존 및 양자 컴퓨팅 공격으로부터 지갑 개인 키를 보호하여 
+                        양자 컴퓨팅이 발전하더라도 자산이 안전하게 보호됩니다.
+                    </p>
+                    <div class="bg-purple-50 p-4 rounded-lg border border-purple-200 mb-6">
+                        <h4 class="font-semibold text-purple-800 mb-2">ML-KEM이 중요한 이유:</h4>
+                        <p class="text-gray-700">
+                            양자 컴퓨터는 오늘날의 암호화 표준을 위협합니다. ML-KEM의 격자 기반 암호화는 
+                            양자 공격에도 안전하여 새로운 위협으로부터 자산을 미래에도 보호합니다.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2 bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-xl">
+                    <div class="relative overflow-hidden rounded-lg shadow-lg">
+                        <div class="p-6 bg-white rounded-lg border border-gray-200">
+                            <h3 class="text-xl font-bold mb-4 text-indigo-900">ML-KEM 기술적 장점</h3>
+                            
+                            <div class="space-y-4">
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 h-8 w-8 rounded-full bg-indigo-100 flex items-center justify-center">
+                                        <i class="fas fa-lock text-indigo-600"></i>
+                                    </div>
+                                    <div class="ml-4">
+                                        <h4 class="text-md font-medium text-gray-900">고급 암호화</h4>
+                                        <p class="text-sm text-gray-600">격자 기반 수학은 양자 알고리즘에 대해 계산적 난이도를 제공합니다.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 h-8 w-8 rounded-full bg-indigo-100 flex items-center justify-center">
+                                        <i class="fas fa-atom text-indigo-600"></i>
+                                    </div>
+                                    <div class="ml-4">
+                                        <h4 class="text-md font-medium text-gray-900">양자 내성</h4>
+                                        <p class="text-sm text-gray-600">쇼어 알고리즘 및 기타 양자 컴퓨팅 공격 벡터에 내성이 있습니다.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 h-8 w-8 rounded-full bg-indigo-100 flex items-center justify-center">
+                                        <i class="fas fa-check-double text-indigo-600"></i>
+                                    </div>
+                                    <div class="ml-4">
+                                        <h4 class="text-md font-medium text-gray-900">NIST 표준화</h4>
+                                        <p class="text-sm text-gray-600">엄격한 보안 평가 후 2024년 NIST에 의해 공식적으로 표준화되었습니다.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 h-8 w-8 rounded-full bg-indigo-100 flex items-center justify-center">
+                                        <i class="fas fa-tachometer-alt text-indigo-600"></i>
+                                    </div>
+                                    <div class="ml-4">
+                                        <h4 class="text-md font-medium text-gray-900">성능 최적화</h4>
+                                        <p class="text-sm text-gray-600">최소한의 계산 오버헤드로 효율적인 구현을 제공합니다.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-6 pt-6 border-t border-gray-200">
+                                <div class="animation-pulse flex justify-between items-center">
+                                    <div class="bg-blue-500 h-2 rounded-full" style="width: 60%"></div>
+                                    <div class="text-sm font-medium text-blue-600">양자 보안 수준</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="section gradient-bg text-white relative">
+        <div class="blur-bg" style="bottom: 20%; left: 10%;"></div>
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-8">오늘 디지털 자산의 미래를 보호하세요</h2>
+            <p class="text-xl mb-10 text-blue-100">
+                양자 컴퓨팅이 보안을 위협할 때까지 기다리지 마세요. 지금 양자내성 암호화가 
+                적용된 최첨단 커스터디 솔루션을 도입하세요.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                <button class="bg-white text-blue-900 hover:bg-blue-100 transition-colors px-8 py-3 rounded-lg font-medium">
+                    상담 일정 잡기
+                </button>
+                <button class="bg-transparent border-2 border-white hover:bg-white hover:text-blue-900 transition-colors text-white px-8 py-3 rounded-lg font-medium">
+                    영업 문의
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="about" class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h2 class="text-xl font-bold mb-4">퀀텀가드</h2>
+                    <p class="text-gray-100 mb-4">
+                        양자내성 암호화와 첨단 커스터디 솔루션으로 디지털 자산을 보호합니다.
+                    </p>
+
+                </div>
+            </div>
+			
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm mb-4 md:mb-0">
+                    © 2024 Quantum Guard, Seoul, KOREA
+                </p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-500 hover:text-white text-sm transition-colors">개인정보 처리방침</a>
+                    <a href="#" class="text-gray-500 hover:text-white text-sm transition-colors">서비스 이용약관</a>
+                    <a href="#" class="text-gray-500 hover:text-white text-sm transition-colors">보안</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
